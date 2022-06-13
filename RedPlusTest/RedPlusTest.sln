@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPlusTest", "RedPlusTest\RedPlusTest.csproj", "{23A10CC2-AEE0-48CA-A0AC-D4D6B36307D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPlus.WebApp", "RedPlus.WebApp\RedPlus.WebApp.csproj", "{551D2823-1233-4D38-BDF1-644F0F08B0FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23A10CC2-AEE0-48CA-A0AC-D4D6B36307D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A10CC2-AEE0-48CA-A0AC-D4D6B36307D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A10CC2-AEE0-48CA-A0AC-D4D6B36307D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A10CC2-AEE0-48CA-A0AC-D4D6B36307D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551D2823-1233-4D38-BDF1-644F0F08B0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551D2823-1233-4D38-BDF1-644F0F08B0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551D2823-1233-4D38-BDF1-644F0F08B0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551D2823-1233-4D38-BDF1-644F0F08B0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {382128BF-8E85-45AB-97AD-9DCD2E41F501}
+	EndGlobalSection
+EndGlobal
