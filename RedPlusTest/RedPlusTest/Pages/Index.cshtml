@@ -1,4 +1,12 @@
 @page
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    var siteTitle = "My Blog";
+    string[] portfolios = {"One", "Two", "Three", "Four"};
+}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,17 +32,12 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/About">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/About">About</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Contact">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Blog/BlogList">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="/Blog/BlogList">Blog Home</a></li>
-                                    <li><a class="dropdown-item" href="/Blog/BlogPost">Blog Post</a></li>
-                                </ul>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
@@ -42,6 +45,22 @@
                                     <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
                                 </ul>
                             </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            @if (User.Identity.IsAuthenticated)
+                            {                            
+                                <li class="nav-item">
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
+                                        <button  type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {                            
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -71,26 +90,16 @@
                         <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
                         <div class="col-lg-8">
                             <div class="row gx-5 row-cols-1 row-cols-md-2">
+                            @foreach (var portfolio in portfolios)
+                            {
                                 <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                    <h2 class="h5">Featured title</h2>
+                                    <h2 class="h5">Featured title @portfolio</h2>
                                     <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                                 </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                                <div class="col h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
+                                
+                            }
+                           
                             </div>
                         </div>
                     </div>
@@ -215,7 +224,7 @@
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; @siteTitle @DateTime.Now.Year</div></div>
                     <div class="col-auto">
                         <a class="link-light small" href="#!">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
