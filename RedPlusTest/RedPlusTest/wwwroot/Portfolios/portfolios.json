@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": ".NET",
+    "description": "ASP.NET Core",
+    "img": "/Portfolios/images/net.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Python",
+    "description": "Django",
+    "img": "/Portfolios/images/python.jpg"
+  }
+]
