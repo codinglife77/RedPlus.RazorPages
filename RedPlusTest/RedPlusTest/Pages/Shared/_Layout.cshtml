@@ -27,16 +27,11 @@
 					<li class="nav-item"><a class="nav-link" asp-page="/About">About</a></li>
 					<li class="nav-item"><a class="nav-link" asp-page="/Contact">Contact</a></li>
 					<li class="nav-item"><a class="nav-link" asp-page="/Blog/BlogList">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" asp-page="/Portfolios/Index">Portfolio</a></li>
 					@*<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>*@
 					@*Ctrl+K , Ctrl+C: for comments*@
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-							<li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-							<li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-						</ul>
-					</li>
+					
 				</ul>
 				<ul class="navbar-nav">
 					@if (User.Identity.IsAuthenticated)

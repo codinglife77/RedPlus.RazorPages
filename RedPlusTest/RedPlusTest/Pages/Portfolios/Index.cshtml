@@ -1,0 +1,37 @@
+﻿@page
+
+
+@model RedPlusTest.Pages.Portfolios.IndexModel
+@{
+	ViewData["Title"] = "Portfolio";
+}
+
+
+<section class="py-5">
+	<div class="container px-5 my-5">
+		<div class="text-center mb-5">
+			<h1 class="fw-bolder">Our Work</h1>
+			<p class="lead fw-normal text-muted mb-0">Company portfolio</p>
+		</div>
+		<div class="row gx-5">
+			@foreach (var portfolio in Model.Portfolios)
+			{
+				<div class="col mb-5 h-100">
+					<div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+						<img class="card-img-top img-fluid" src="@portfolio.Image" />
+					</div>
+					<h2 class="h5">Project @portfolio.Title</h2>
+					<p class="mb-0">@portfolio.Description</p>
+				</div>
+
+			}
+		</div>
+	</div>
+</section>
+<section class="py-5 bg-light">
+	<div class="container px-5 my-5">
+		<h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+		<a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+	</div>
+</section>
+
