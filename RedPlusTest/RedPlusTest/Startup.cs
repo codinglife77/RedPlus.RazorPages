@@ -18,6 +18,7 @@ namespace RedPlusTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddTransient<PortfolioServiceJsonFile>();
         }
 
@@ -35,6 +36,7 @@ namespace RedPlusTest
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
                 //endpoints.MapGet("/", async context =>
                 //{
                 //    await context.Response.WriteAsync("Hello World!!");

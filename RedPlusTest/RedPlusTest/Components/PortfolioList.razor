@@ -1,0 +1,25 @@
+﻿@*@using RedPlusTest.Models*@
+@using RedPlusTest.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject PortfolioServiceJsonFile PortfolioService
+
+<h2>Using Blazor Component</h2>
+<div class="row gx-5">
+			@foreach (var portfolio in PortfolioService.GetPortfolios())
+			{
+				<div class="col mb-5 h-100">
+					<div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+						<img class="card-img-top img-fluid" src="@portfolio.Image" />
+					</div>
+					<h2 class="h5">Project @portfolio.Title</h2>
+					<p class="mb-0">@portfolio.Description</p>
+					<div class="card-footer">
+						<button class="btn btn-primary">Read More...</button>
+					</div>
+				</div>
+
+			}
+		</div>
+@code {
+
+}
