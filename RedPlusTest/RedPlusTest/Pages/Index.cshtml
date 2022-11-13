@@ -2,8 +2,11 @@
 
 @inject PortfolioServiceJsonFile PortfolioService
 
+@using RedPlusTest.Components
+
 @{
 	ViewBag.Title = "My Blog Index";
+	Layout = "_LayoutPortfolio";
 	// string[] portfolios = { "One", "Two", "Three", "Four" };
 	//List<Portfolio> portfolios = new List<Portfolio>()
 	//{
@@ -40,6 +43,8 @@
 	<div class="container px-5 my-5">
 		<div class="row gx-5">
 			<div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
+			<h2>Blazor component</h2>
+			<component type="typeof(PortfolioList)" render-mode="ServerPrerendered"></component>
 			<div class="col-lg-8">
 				<div class="row gx-5 row-cols-1 row-cols-md-2">
 					@foreach (var portfolio in portfolios)
