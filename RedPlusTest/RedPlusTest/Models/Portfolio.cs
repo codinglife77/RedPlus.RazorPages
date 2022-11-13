@@ -16,7 +16,9 @@ namespace RedPlusTest.Models
         [JsonPropertyName("img")]
         public string Image { get; set; }
 
-        public override string ToString()
+		public int[] Ratings { get; set; }
+
+		public override string ToString()
         {
             return JsonSerializer.Serialize<Portfolio>(this);
         }

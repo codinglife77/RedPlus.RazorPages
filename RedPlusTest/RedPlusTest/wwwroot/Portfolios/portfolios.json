@@ -1,14 +1,19 @@
 [
   {
-    "id": 1,
-    "title": ".NET",
-    "description": "ASP.NET Core",
-    "img": "/Portfolios/images/net.jpg"
+    "Id": 1,
+    "Title": ".NET",
+    "Description": "ASP.NET Core",
+    "img": "/Portfolios/images/net.jpg",
+    "Ratings": [
+      1,
+      3
+    ]
   },
   {
-    "id": 2,
-    "title": "Python",
-    "description": "Django",
-    "img": "/Portfolios/images/python.jpg"
+    "Id": 2,
+    "Title": "Python",
+    "Description": "Django",
+    "img": "/Portfolios/images/python.jpg",
+    "Ratings": null
   }
 ]
